@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GritCoin (GRIT)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #222;
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      max-width: 100px;
+    }
+    h1 {
+      margin: 10px 0;
+      color: #f8c133;
+    }
+    section {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .buttons a {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      background: #f8c133;
+      color: #111;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    footer {
+      background: #222;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="gritcoin-logo.png" alt="GritCoin Logo" />
+    <h1>GritCoin (GRIT)</h1>
+    <p>The Token of Hustle and Perseverance</p>
+  </header>
+  <section>
+    <h2>Mission (English)</h2>
+    <p><strong>GritCoin</strong> empowers the hustler generation with a decentralized currency built on strength, perseverance, and self-reliance. GRIT is for the bold, the builders, and those who never quit.</p>
+
+    <h2>Dhamira (Kiswahili)</h2>
+    <p><strong>GritCoin</strong> inawezesha kizazi cha wapambanaji kwa sarafu huru inayojengwa juu ya ujasiri, uvumilivu, na kujitegemea. GRIT ni kwa mashujaa, wajasiriamali, na wale wasiokata tamaa.</p>
+
+    <h2>Token Details</h2>
+    <p><strong>Name:</strong> GritCoin<br />
+       <strong>Symbol:</strong> GRIT<br />
+       <strong>Total Supply:</strong> 19,000,000 GRIT<br />
+       <strong>Contract Address:</strong> 0x8852d7e37CB912fE067311822066490Bb721c559
+    </p>
+
+    <div class="buttons">
+      <a href="https://bscscan.com/token/0x8852d7e37CB912fE067311822066490Bb721c559" target="_blank">View on BscScan</a>
+      <a href="#" onclick="addToken()">Add to MetaMask</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 GritCoin. All rights reserved.
+  </footer>
+
+  <script>
+    async function addToken() {
+      try {
+        const wasAdded = await window.ethereum.request({
+          method: 'wallet_watchAsset',
+          params: {
+            type: 'ERC20',
+            options: {
+              address: '0x8852d7e37CB912fE067311822066490Bb721c559',
+              symbol: 'GRIT',
+              decimals: 18,
+              image: 'https://yourdomain.com/logo.png',
+            },
+          },
+        });
+        if (wasAdded) {
+          alert('GRIT added to MetaMask!');
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  </script>
+</body>
+</html>
